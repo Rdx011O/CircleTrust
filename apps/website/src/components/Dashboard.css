@@ -1,0 +1,336 @@
+/* =============================================
+   DASHBOARD — CircleTrust
+   ============================================= */
+
+.dashboard-section {
+    background: linear-gradient(180deg, #050b1a 0%, #080e20 60%, #050b1a 100%);
+}
+
+/* ─── Section header tweak ─── */
+.db-section-header {
+    margin-top: 80px;
+}
+
+.db-section-header:first-of-type {
+    margin-top: 0;
+}
+
+.db-section-header h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+    margin: 12px 0 14px;
+}
+
+/* ─── Grid layouts ─── */
+.db-grid {
+    display: grid;
+    gap: 22px;
+    margin-bottom: 16px;
+}
+
+.db-grid--2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.db-grid--3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* ─── Base Card ─── */
+.db-card {
+    position: relative;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-lg);
+    padding: 26px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    transition: var(--transition);
+    backdrop-filter: blur(20px);
+}
+
+.db-card:hover {
+    background: var(--bg-card-hover);
+    border-color: var(--border-glow);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 48px rgba(59, 130, 246, 0.14);
+}
+
+/* Top color strip */
+.db-card__accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    opacity: 0.8;
+}
+
+/* ─── Card internals ─── */
+.db-card__top {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.db-circle-emoji {
+    font-size: 2rem;
+    line-height: 1;
+    flex-shrink: 0;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+}
+
+.db-card__name {
+    font-family: var(--font-head);
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 3px;
+}
+
+.db-card__sub {
+    font-size: 0.78rem;
+    color: var(--text-muted);
+}
+
+/* ─── Progress Ring ─── */
+.db-ring-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.db-ring-pct {
+    position: absolute;
+    font-family: var(--font-head);
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ─── Stats row ─── */
+.db-card__stats {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.db-stat {
+    flex: 1;
+    min-width: 70px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.db-stat__label {
+    font-size: 0.68rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.db-stat__val {
+    font-family: var(--font-head);
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+/* ─── Card footer (Continue) ─── */
+.db-card__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.db-payout-badge {
+    font-size: 0.78rem;
+    color: var(--text-secondary);
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid var(--border);
+}
+
+.db-btn-sm {
+    font-family: var(--font-head);
+    font-size: 0.82rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: var(--radius-md);
+    background: var(--gradient-accent);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.db-btn-sm:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+/* ─── Slots progress bar (Upcoming) ─── */
+.db-slots-bar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.db-slots-bar__track {
+    flex: 1;
+    height: 6px;
+    background: rgba(255, 255, 255, 0.07);
+    border-radius: 999px;
+    overflow: hidden;
+}
+
+.db-slots-bar__fill {
+    height: 100%;
+    border-radius: 999px;
+    transition: width 1s ease;
+}
+
+.db-slots-text {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+    font-weight: 600;
+}
+
+/* ─── Full-width button ─── */
+.db-btn-full {
+    width: 100%;
+    padding: 12px;
+    border-radius: var(--radius-md);
+    border: none;
+    color: #fff;
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 0.88rem;
+    cursor: pointer;
+    transition: var(--transition);
+    letter-spacing: 0.02em;
+}
+
+.db-btn-full:hover:not(:disabled) {
+    opacity: 0.85;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.db-btn-full:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* ─── Badges ─── */
+.db-badge {
+    flex-shrink: 0;
+    padding: 4px 10px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    border: 1px solid transparent;
+}
+
+.db-badge--ngo {
+    background: rgba(16, 185, 129, 0.12);
+    border-color: rgba(16, 185, 129, 0.3);
+    color: var(--accent-green);
+}
+
+.db-badge--org {
+    background: rgba(124, 58, 237, 0.12);
+    border-color: rgba(124, 58, 237, 0.3);
+    color: #a78bfa;
+}
+
+.db-badge--full {
+    background: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.25);
+    color: var(--accent-red);
+}
+
+/* ─── Filter tabs (Trading) ─── */
+.db-filter-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.db-filter-tab {
+    padding: 8px 22px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+    background: transparent;
+    color: var(--text-secondary);
+    font-family: var(--font-head);
+    font-size: 0.84rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.db-filter-tab:hover {
+    border-color: var(--accent-blue);
+    color: var(--text-primary);
+    background: rgba(59, 130, 246, 0.06);
+}
+
+.db-filter-tab--active {
+    background: var(--gradient-accent);
+    border-color: transparent;
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.35);
+}
+
+/* ─── Responsive ─── */
+@media (max-width: 900px) {
+    .db-grid--3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+
+    .db-grid--2,
+    .db-grid--3 {
+        grid-template-columns: 1fr;
+    }
+
+    .db-card__stats {
+        flex-direction: column;
+    }
+
+    .db-card__footer {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .db-payout-badge {
+        text-align: center;
+    }
+}

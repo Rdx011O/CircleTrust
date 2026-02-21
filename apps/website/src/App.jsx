@@ -6,6 +6,7 @@ import Features from './components/Features'
 import TechStack from './components/TechStack'
 import Impact from './components/Impact'
 import FutureScope from './components/FutureScope'
+import Dashboard from './components/Dashboard'
 import CTA from './components/CTA'
 import Footer from './components/Footer'
 
@@ -21,6 +22,7 @@ function App() {
         <TechStack />
         <Impact />
         <FutureScope />
+        <Dashboard />
         <CTA />
       </main>
       <Footer />
