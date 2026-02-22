@@ -37,7 +37,7 @@ export default function Navbar() {
 
                     {/* CTA */}
                     <div className="nav-actions">
-                        <a href="#cta" className="btn btn-primary" style={{ padding: '10px 20px', fontSize: '0.88rem' }}>
+                        <a href="/register" className="btn btn-primary" style={{ padding: '10px 20px', fontSize: '0.88rem' }}>
                             Join the Circle →
                         </a>
                     </div>
@@ -60,7 +60,7 @@ export default function Navbar() {
                 {links.map(l => (
                     <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}>{l.label}</a>
                 ))}
-                <a href="#cta" onClick={() => setMenuOpen(false)} className="btn btn-primary" style={{ marginTop: 8 }}>
+                <a href="/register" onClick={() => setMenuOpen(false)} className="btn btn-primary" style={{ marginTop: 8 }}>
                     Join the Circle →
                 </a>
             </div>

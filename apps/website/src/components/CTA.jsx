@@ -22,7 +22,7 @@ export default function CTA() {
                     </p>
 
                     <div className="cta-btns">
-                        <a href="#" className="btn btn-primary" style={{ fontSize: '1rem', padding: '15px 32px' }}>
+                        <a href="/register" className="btn btn-primary" style={{ fontSize: '1rem', padding: '15px 32px' }}>
                             🚀 Get Early Access
                         </a>
                         <a href="#hero" className="btn btn-outline" style={{ fontSize: '1rem', padding: '15px 32px' }}>
