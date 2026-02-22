@@ -26,7 +26,7 @@ export default function Hero() {
                     </p>
 
                     <div className="hero-cta">
-                        <a href="#cta" className="btn btn-primary">Get Early Access →</a>
+                        <a href="/register" className="btn btn-primary">Get Early Access →</a>
                         <a href="#how" className="btn btn-outline">How It Works</a>
                     </div>
 
