@@ -1,11 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import {
     Users,
     Sparkles,
     Bell,
     Lock,
-    TrendingUp,
-    ChevronRight,
     ShieldCheck
 } from "lucide-react";
 import { Card, CardHeader, CardTitle, CardContent, CardDescription } from "../components/ui/Card";
@@ -15,7 +13,7 @@ import { ProgressCircle } from "../components/ui/ProgressCircle";
 import { useAuth } from "../contexts/AuthContext";
 
 const Dashboard = () => {
-    const [isTxHistoryLocked, setIsTxHistoryLocked] = useState(true);
+    const isTxHistoryLocked = true;
     const { profile } = useAuth();
 
     return (
